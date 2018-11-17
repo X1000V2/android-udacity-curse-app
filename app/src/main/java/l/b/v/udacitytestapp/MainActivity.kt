@@ -1,4 +1,4 @@
-package udacitytestapp.v.b.l.udacitytestapp
+package l.b.v.udacitytestapp
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
