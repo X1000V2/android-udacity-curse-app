@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Udacity Test App</string>
+
+    <string name="roll">Roll</string>
+    <string name="textview_text">1</string>
 </resources>
