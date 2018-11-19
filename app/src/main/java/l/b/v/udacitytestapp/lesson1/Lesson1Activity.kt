@@ -1,12 +1,12 @@
-package l.b.v.udacitytestapp
+package l.b.v.udacitytestapp.lesson1
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import l.b.v.udacitytestapp.R
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class Lesson1Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
