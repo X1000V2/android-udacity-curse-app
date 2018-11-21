@@ -4,4 +4,16 @@
     <string name="roll">Roll</string>
     <string name="textview_text">1</string>
     <string name="name">Luis Barroso</string>
+    <string name="imageview_description_star_in_the_screen">Star in the screen</string>
+    <string name="textview_bio">Hi, my name is Luis.
+        \n
+        \nI\'m a senior mobility developer at Accenture.
+        \n
+        \nI had been working for companies like BBVA, Renfe, Endesa and El Corte Inglés.
+        \n
+        \nThe languages that I usually use for develop are Java, Kotlin and XML. Other skills and technologies that i have are Git/GitFlow, Retrofit, Google Maps, Swagger, Picasso, Scrum/Agile.
+        \n
+        \nFinally but not least important, I am interested in everything related to Android.</string>
+    <string name="what_are_you_nickname">What are your nickname</string>
+    <string name="done">Done</string>
 </resources>
