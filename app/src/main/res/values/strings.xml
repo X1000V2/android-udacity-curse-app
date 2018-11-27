@@ -16,4 +16,9 @@
         \nFinally but not least important, I am interested in everything related to Android.</string>
     <string name="what_are_you_nickname">What are your nickname</string>
     <string name="done">Done</string>
+    <string name="box_one">Box One</string>
+    <string name="box_two">Box Two</string>
+    <string name="box_three">Box Three</string>
+    <string name="box_four">Box Four</string>
+    <string name="box_five">Box Five</string>
 </resources>
