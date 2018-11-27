@@ -1,4 +1,4 @@
-package l.b.v.udacitytestapp.lesson2
+package l.b.v.udacitytestapp.lesson2.part1
 
 import android.content.Context
 import android.databinding.DataBindingUtil
@@ -10,7 +10,7 @@ import android.view.View.VISIBLE
 import android.view.inputmethod.InputMethodManager
 import l.b.v.udacitytestapp.R
 import l.b.v.udacitytestapp.databinding.AboutMeLayoutBinding
-import l.b.v.udacitytestapp.lesson2.databinding.MyName
+import l.b.v.udacitytestapp.lesson2.part1.databinding.MyName
 
 class AboutMeActivity: AppCompatActivity() {
 

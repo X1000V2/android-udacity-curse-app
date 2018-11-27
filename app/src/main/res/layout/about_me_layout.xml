@@ -6,7 +6,7 @@
     <data>
         <variable
                 name="myName"
-                type="l.b.v.udacitytestapp.lesson2.databinding.MyName"/>
+                type="l.b.v.udacitytestapp.lesson2.part1.databinding.MyName"/>
     </data>
 
     <LinearLayout
