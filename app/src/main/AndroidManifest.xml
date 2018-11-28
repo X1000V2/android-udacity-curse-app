@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".lesson1.Lesson1Activity" />
         <activity android:name=".lesson2.part1.AboutMeActivity" />
-        <activity android:name=".lesson2.part2.ColorMyViewsActivity"></activity>
+        <activity android:name=".lesson2.part2.ColorMyViewsActivity" />
+        <activity android:name=".lesson3Navigation.AndroidTriviaActivity"></activity>
     </application>
 
 </manifest>
