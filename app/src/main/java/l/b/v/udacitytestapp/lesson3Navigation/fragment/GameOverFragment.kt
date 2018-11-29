@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.findNavController
 import l.b.v.udacitytestapp.R
 import l.b.v.udacitytestapp.databinding.FragmentGameOverBinding
@@ -21,6 +22,10 @@ class GameOverFragment : Fragment() {
 
         var binding = DataBindingUtil.inflate<FragmentGameOverBinding>(inflater, R.layout.fragment_game_over, container, false)
         binding.tryAgainButton.setOnClickListener { it.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment) }
+
+        var args = GameWonFragmentArgs.fromBundle(arguments)
+        Toast.makeText(context, "Total questions: ${args.numQuestions}, Questions correct: ${args.numCorrect}", Toast.LENGTH_LONG).show()
+
         return binding.root
 
     }

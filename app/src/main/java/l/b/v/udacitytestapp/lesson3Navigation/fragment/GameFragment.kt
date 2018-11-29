@@ -12,6 +12,7 @@ import l.b.v.udacitytestapp.R
 import l.b.v.udacitytestapp.databinding.FragmentGameBinding
 import l.b.v.udacitytestapp.lesson3Navigation.data.Game
 import l.b.v.udacitytestapp.lesson3Navigation.data.Question
+
 /**
  * A simple [Fragment] subclass.
  *
@@ -19,8 +20,12 @@ import l.b.v.udacitytestapp.lesson3Navigation.data.Question
 class GameFragment : Fragment() {
 
     private val questions: MutableList<Question> = mutableListOf(
-        Question(text = "What is Android Jetpack?", answers = listOf("all of these", "tools", "documentation", "libraries"),correct = 0)/*,
-        Question(text = "Base class for Layout?", answers = listOf("ViewGroup", "ViewSet", "ViewCollection", "ViewRoot"),correct = 3),
+        Question(
+            text = "What is Android Jetpack?",
+            answers = listOf("all of these", "tools", "documentation", "libraries"),
+            correct = 0
+        ),
+        Question(text = "Base class for Layout?", answers = listOf("ViewGroup", "ViewSet", "ViewCollection", "ViewRoot"),correct = 3)/*,
         Question(text = "Layout for complex Screens?", answers = listOf("ConstraintLayout", "GridLayout", "LinearLayout", "FrameLayout"), correct = 0),
         Question(text = "Pushing structured data into a Layout?", answers = listOf("Data Binding", "Data Pushing", "Set Text", "OnClick"),correct = 0),
         Question(text = "Inflate layout in fragments?", answers = listOf("onCreateView", "onActivityCreated", "onCreateLayout", "onInflateLayout"),correct = 0),
@@ -42,47 +47,65 @@ class GameFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false)
         //set the first question
         setData(0)
-        binding.submitButton.setOnClickListener { view: View -> submitButtonClick(view, binding.questionRadioGroup.checkedRadioButtonId) }
+        binding.submitButton.setOnClickListener { view: View ->
+            submitButtonClick(
+                view,
+                binding.questionRadioGroup.checkedRadioButtonId
+            )
+        }
         binding.invalidateAll()
         return binding.root
     }
 
-    private fun setData(index: Int){
+    private fun setData(index: Int) {
         questionIndex = index
-        mGame = Game(questions[index],questions[index].answers)
+        mGame = Game(questions[index], questions[index].answers)
         binding.game = mGame
     }
 
-    private fun submitButtonClick(view:View, checkedRadioButtonId: Int) {
+    private fun submitButtonClick(view: View, checkedRadioButtonId: Int) {
 
         //save user anwser and go to the next question
-        when(checkedRadioButtonId){
+        when (checkedRadioButtonId) {
             R.id.firstAnswerRadioButton -> answersUser.add(0)
             R.id.secondAnswerRadioButton -> answersUser.add(1)
             R.id.thirdAnswerRadioButton -> answersUser.add(2)
             R.id.fourthAnswerRadioButton -> answersUser.add(3)
         }
 
-        if(questionIndex < questions.size-1){
+        if (questionIndex < questions.size - 1) {
             questionIndex++
             setData(questionIndex)
-        }else{
+        } else {
             //evaluate if the user wins
-            if(chekAnswers()){
-                view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
-            }else{
-                view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
+            if (chekAnswers()) {
+                view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(questions.size, answersCorrect()))
+            } else {
+                view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment(questions.size, answersCorrect()))
             }
         }
     }
 
-    private fun chekAnswers():Boolean{
+    private fun chekAnswers(): Boolean {
 
-        val list:List<Int> = questions.map { question ->
-            question.correct
-        }
-        return list.equals(answersUser)
+        return getCorrectList().equals(answersUser)
     }
 
+    private fun answersCorrect(): Int {
+        var countCorrect = 0
+
+        getCorrectList().forEachIndexed { index, i ->
+            if (i == answersUser[index]) {
+                countCorrect++
+            }
+        }
+        return countCorrect
+    }
+
+    private fun getCorrectList(): List<Int> {
+        return questions.map { question ->
+            question.correct
+        }
+    }
 
 }
