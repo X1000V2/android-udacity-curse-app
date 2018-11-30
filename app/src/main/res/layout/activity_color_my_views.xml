@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constaintLayoutBackground"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="l.b.v.udacitytestapp.lesson2.part2.ColorMyViewsActivity">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:id="@+id/constaintLayoutBackground"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context="l.b.v.udacitytestapp.lesson2.part2.ColorMyViewsActivity">
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView1"
         style="@style/WhiteBox"
         android:layout_width="0dp"
@@ -134,4 +134,4 @@
         app:layout_constraintStart_toEndOf="@+id/button_yellow"
         tools:text="@string/button_green" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

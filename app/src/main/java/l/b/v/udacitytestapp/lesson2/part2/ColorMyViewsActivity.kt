@@ -1,6 +1,6 @@
 package l.b.v.udacitytestapp.lesson2.part2
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_color_my_views.*

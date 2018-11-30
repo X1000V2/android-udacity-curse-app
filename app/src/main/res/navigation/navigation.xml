@@ -38,5 +38,9 @@
     <fragment android:id="@+id/aboutFragment"
               android:name="l.b.v.udacitytestapp.lesson3Navigation.fragment.AboutFragment"
               android:label="fragment_about" tools:layout="@layout/fragment_about"/>
+    <fragment android:id="@+id/rulesFragment"
+              android:name="l.b.v.udacitytestapp.lesson3Navigation.fragment.RulesFragment"
+              android:label="RulesFragment"
+              tools:layout="@layout/fragment_rules"/>
 
 </navigation>
