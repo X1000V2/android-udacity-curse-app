@@ -26,6 +26,15 @@ class AndroidTriviaActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
 
+        //control the side menu to be open only in menu screen
+        navController.addOnNavigatedListener { controller, destination ->
+            if(destination.id == controller.graph.startDestination){
+                drawerLayout?.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+            }else{
+                drawerLayout?.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+            }
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
