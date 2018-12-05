@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation" app:startDestination="@id/titleFragment">
+
+    <fragment android:id="@+id/titleFragment"
+              android:name="l.b.v.udacitytestapp.lesson3Navigation.fragment.TitleFragment"
+              android:label="TitleFragment"
+              tools:layout="@layout/fragment_title">
+        <action
+                android:id="@+id/action_titleFragment_to_gameFragment"
+                app:destination="@id/gameFragment"
+                app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment android:id="@+id/gameFragment" android:name="l.b.v.udacitytestapp.lesson3Navigation.fragment.GameFragment"
+              android:label="GameFragment"
+              tools:layout="@layout/fragment_game">
+        <action
+                android:id="@+id/action_gameFragment_to_gameOverFragment"
+                app:destination="@id/gameOverFragment"
+                app:popUpTo="@+id/gameFragment"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_in_right"
+                app:popExitAnim="@anim/slide_out_right"
+                />
+        <action
+                android:id="@+id/action_gameFragment_to_gameWonFragment"
+                app:destination="@id/gameWonFragment"
+                app:popUpTo="@+id/gameFragment"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_in_right"
+                app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment android:id="@+id/gameOverFragment"
+              android:name="l.b.v.udacitytestapp.lesson3Navigation.fragment.GameOverFragment"
+              android:label="GameOverFragment"
+              tools:layout="@layout/fragment_game_over">
+        <action
+                android:id="@+id/action_gameOverFragment_to_gameFragment"
+                app:destination="@id/gameFragment"
+                app:popUpTo="@+id/gameOverFragment"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_left"/>
+        <argument android:name="numQuestions" app:argType="integer"/>
+        <argument android:name="numCorrect" app:argType="integer"/>
+    </fragment>
+    <fragment android:id="@+id/gameWonFragment"
+              android:name="l.b.v.udacitytestapp.lesson3Navigation.fragment.GameWonFragment"
+              android:label="GameWonFragment"
+              tools:layout="@layout/fragment_game_won">
+        <action android:id="@+id/action_gameWonFragment_to_titleFragment" app:destination="@id/titleFragment"
+                app:popUpTo="@+id/titleFragment" app:popUpToInclusive="true"/>
+        <argument android:name="numQuestions" app:argType="integer"/>
+        <argument android:name="numCorrect" app:argType="integer"/>
+    </fragment>
+    <fragment android:id="@+id/aboutFragment"
+              android:name="l.b.v.udacitytestapp.lesson3Navigation.fragment.AboutFragment"
+              android:label="fragment_about" tools:layout="@layout/fragment_about"/>
+    <fragment android:id="@+id/rulesFragment"
+              android:name="l.b.v.udacitytestapp.lesson3Navigation.fragment.RulesFragment"
+              android:label="RulesFragment"
+              tools:layout="@layout/fragment_rules"/>
+
+</navigation>
