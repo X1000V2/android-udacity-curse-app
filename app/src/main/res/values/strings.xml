@@ -54,6 +54,9 @@
     <string name="share">Share</string>
     <string name="sharing_not_available">Sharing Not Available</string>
 
+    <!-- Lesson 4 Life Cycle-->
+    <string name="lesson_4_life_cycle">Lesson 4 life Cycle</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

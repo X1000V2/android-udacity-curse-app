@@ -20,6 +20,7 @@
         <activity android:name=".lesson2.part1.AboutMeActivity" />
         <activity android:name=".lesson2.part2.ColorMyViewsActivity" />
         <activity android:name=".lesson3Navigation.AndroidTriviaActivity"></activity>
+        <activity android:name=".lesson4.Lesson4Activity"></activity>
     </application>
 
 </manifest>
