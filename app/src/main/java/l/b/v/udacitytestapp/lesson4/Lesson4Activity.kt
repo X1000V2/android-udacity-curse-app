@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import l.b.v.udacitytestapp.R
 import l.b.v.udacitytestapp.databinding.Activity4LayoutBinding
+import timber.log.Timber
 
 class Lesson4Activity: AppCompatActivity() {
 
@@ -14,11 +15,11 @@ class Lesson4Activity: AppCompatActivity() {
 
         val binding = DataBindingUtil.setContentView<Activity4LayoutBinding>(this, R.layout.activity_4_layout)
 
-        Log.i(Lesson4Activity::class.java.simpleName, "onCreate")
+        Timber.i("onCreate")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.i(Lesson4Activity::class.java.simpleName, "onStart")
+        Timber.i("onStart")
     }
 }
