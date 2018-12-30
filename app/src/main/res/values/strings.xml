@@ -56,6 +56,10 @@
 
     <!-- Lesson 4 Life Cycle-->
     <string name="lesson_4_life_cycle">Lesson 4 life Cycle</string>
+    <string name="dollar_sign">$</string>
+    <string name="zero">0</string>
+    <string name="dessert_sold">Desserts Sold</string>
+    <string name="share_text">I\'ve clicked %1$d Desserts for a total of %2$d$ #AndroidDessertClicker</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
