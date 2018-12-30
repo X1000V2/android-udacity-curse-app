@@ -17,7 +17,7 @@ class Lesson4Activity: AppCompatActivity() {
     }
 
     private lateinit var binding: Activity4LayoutBinding
-    private var dessertTimer = DessertTimer()
+    private var dessertTimer = DessertTimer(this.lifecycle)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +26,11 @@ class Lesson4Activity: AppCompatActivity() {
 
         binding.dessertButton.setImageResource(R.drawable.cupcake)
 
-        binding.revenue = 0
-        binding.amountSold = binding.revenue?.let { it * CONSTANT_PRICE_PER_UNIT}?: 0
+        if(savedInstanceState == null){
+            binding.revenue = 0
+            binding.amountSold = binding.revenue?.let { it * CONSTANT_PRICE_PER_UNIT}?: 0
+        }
+
 
         binding.dessertButton.setOnClickListener {
             dessetButtonAction()
@@ -40,7 +43,6 @@ class Lesson4Activity: AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Timber.i("onStart")
-        dessertTimer.startTimer()
     }
 
     override fun onResume() {
@@ -51,7 +53,6 @@ class Lesson4Activity: AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         Timber.i("onStop")
-        dessertTimer.stopTimer()
     }
 
     override fun onPause() {

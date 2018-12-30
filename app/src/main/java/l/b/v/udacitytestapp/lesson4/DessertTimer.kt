@@ -2,13 +2,21 @@ package l.b.v.udacitytestapp.lesson4
 
 import timber.log.Timber
 import android.os.Handler
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 
-class DessertTimer {
+class DessertTimer(lifecycle: Lifecycle): LifecycleObserver {
 
     private var handler = Handler()
     private lateinit var runnable: Runnable
     private var secondsCount = 0
 
+    init {
+        lifecycle.addObserver(this)
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun startTimer(){
 
         runnable = Runnable {
@@ -24,6 +32,7 @@ class DessertTimer {
 
     }
 
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun stopTimer(){
 
         handler.removeCallbacks(runnable)
