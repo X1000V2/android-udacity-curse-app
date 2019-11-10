@@ -23,7 +23,7 @@ class GameOverFragment : Fragment() {
         var binding = DataBindingUtil.inflate<FragmentGameOverBinding>(inflater, R.layout.fragment_game_over, container, false)
         binding.tryAgainButton.setOnClickListener { it.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment) }
 
-        var args = GameWonFragmentArgs.fromBundle(arguments)
+        var args = GameWonFragmentArgs.fromBundle(arguments!!)
         Toast.makeText(context, "Total questions: ${args.numQuestions}, Questions correct: ${args.numCorrect}", Toast.LENGTH_LONG).show()
 
         return binding.root

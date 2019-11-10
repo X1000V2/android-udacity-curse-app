@@ -22,7 +22,7 @@ class GameWonFragment : Fragment() {
         var binding = DataBindingUtil.inflate<FragmentGameWonBinding>(inflater, R.layout.fragment_game_won,container,false)
         binding.nextMatchButton.setOnClickListener { view -> view.findNavController().navigate(R.id.action_gameWonFragment_to_titleFragment) }
 
-        var args = GameWonFragmentArgs.fromBundle(arguments)
+        var args = GameWonFragmentArgs.fromBundle(arguments!!)
         Toast.makeText(context, "Total questions: ${args.numQuestions}, Questions correct: ${args.numCorrect}",Toast.LENGTH_LONG).show()
 
         setHasOptionsMenu(true)
@@ -30,7 +30,7 @@ class GameWonFragment : Fragment() {
         return binding.root
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater?.inflate(R.menu.winner_menu, menu)
 
@@ -42,7 +42,7 @@ class GameWonFragment : Fragment() {
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             R.id.option_share -> startActivity(getShareIntent())
         }
@@ -52,7 +52,7 @@ class GameWonFragment : Fragment() {
     fun getShareIntent():Intent{
         val intent = Intent(Intent.ACTION_SEND)
         intent.setType("text/plain")
-        var args = GameWonFragmentArgs.fromBundle(arguments)
+        var args = GameWonFragmentArgs.fromBundle(arguments!!)
         intent.putExtra(Intent.EXTRA_TEXT,getString(R.string.share_success_text,args.numCorrect,args.numQuestions))
         return intent
     }

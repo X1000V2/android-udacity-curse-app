@@ -16,6 +16,9 @@
         \n
         \nFinally but not least important, I am interested in everything related to Android.
     </string>
+    <string name="lesson_1">Lesson 1</string>
+    <string name="lesson_2_part_1">Lesson 2 Part 1</string>
+    <string name="lesson_2_part_2">Lesson 2 Part 2</string>
     <string name="what_are_you_nickname">What are your nickname</string>
     <string name="done">Done</string>
     <string name="box_one">Box One</string>
@@ -30,6 +33,7 @@
     <string name="button_green">GREEN</string>
 
     <!-- Lesson 3 Navigation-->
+    <string name="lesson_3_navigation">Lesson 3 Navigation</string>
     <string name="game_over">Game Over</string>
     <string name="try_again">Try Again?</string>
     <string name="position">Position</string>
@@ -63,4 +67,17 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Lesson 5 App Architecture UI Layer-->
+    <string name="skip">Skip</string>
+    <string name="play_again">Play Again</string>
+    <string name="you_scored">You Scored</string>
+    <string name="title_text">guess the word!</string>
+    <string name="play_button">Play</string>
+    <string name="get_ready">Get ready to</string>
+    <string name="got_it">Got it</string>
+    <string name="word_is">The word is…</string>
+    <string name="quote_format">\"%s\"</string>
+    <string name="score_format">Current Score: %d</string>
+
 </resources>

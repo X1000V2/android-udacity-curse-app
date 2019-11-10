@@ -65,19 +65,19 @@ class Lesson4Activity: AppCompatActivity() {
         Timber.i("onDestroy")
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
 
-        outState?.putInt(SAVE_AMOUNT_SOLD, binding!!.amountSold!!)
-        outState?.putInt(SAVE_REVENUE, binding!!.revenue!!)
+        outState.putInt(SAVE_AMOUNT_SOLD, binding.amountSold!!)
+        outState.putInt(SAVE_REVENUE, binding.revenue!!)
 
         super.onSaveInstanceState(outState)
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
 
-        binding!!.amountSold = savedInstanceState!!.getInt(SAVE_AMOUNT_SOLD)
-        binding!!.revenue = savedInstanceState!!.getInt(SAVE_REVENUE)
+        binding.amountSold = savedInstanceState.getInt(SAVE_AMOUNT_SOLD)
+        binding.revenue = savedInstanceState.getInt(SAVE_REVENUE)
     }
 
     private fun dessetButtonAction(){

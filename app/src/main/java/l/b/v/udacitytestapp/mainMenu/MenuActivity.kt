@@ -10,6 +10,7 @@ import l.b.v.udacitytestapp.lesson2.part1.AboutMeActivity
 import l.b.v.udacitytestapp.lesson2.part2.ColorMyViewsActivity
 import l.b.v.udacitytestapp.lesson3Navigation.AndroidTriviaActivity
 import l.b.v.udacitytestapp.lesson4.Lesson4Activity
+import l.b.v.udacitytestapp.lesson5AppArchitectureUILayer.Lesson5AppArchitectureUILayerActivity
 
 class MenuActivity : AppCompatActivity(), MenuContract.View {
 
@@ -19,6 +20,7 @@ class MenuActivity : AppCompatActivity(), MenuContract.View {
         const val LESSON_2_2 = 3
         const val LESSON_3 = 4
         const val LESSON_4 = 5
+        const val LESSON_5 = 6
     }
 
     private var mPresenter: MenuPresenter? = null
@@ -33,6 +35,7 @@ class MenuActivity : AppCompatActivity(), MenuContract.View {
         buttonLesson2part2.setOnClickListener { goToLesson(LESSON_2_2) }
         buttonLesson3Navigation.setOnClickListener { goToLesson(LESSON_3) }
         buttonLesson4LifeCycle.setOnClickListener { goToLesson(LESSON_4) }
+        buttonLesson5AppArchitectureUILayer.setOnClickListener { goToLesson(LESSON_5) }
     }
 
     override fun onStart() {
@@ -50,6 +53,7 @@ class MenuActivity : AppCompatActivity(), MenuContract.View {
             LESSON_2_2 -> Intent(this, ColorMyViewsActivity::class.java)
             LESSON_3 -> Intent(this, AndroidTriviaActivity::class.java)
             LESSON_4 -> Intent(this, Lesson4Activity::class.java)
+            LESSON_5 -> Intent(this, Lesson5AppArchitectureUILayerActivity::class.java)
             else -> Intent(this, Lesson1Activity::class.java)
         }
         startActivity(intent)

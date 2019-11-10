@@ -6,7 +6,7 @@
                                                    android:layout_height="match_parent">
 
     <Button
-            android:text="Lesson 1"
+            android:text="@string/lesson_1"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:id="@+id/buttonLesson1"
@@ -18,7 +18,7 @@
             android:layout_marginStart="8dp"/>
 
     <Button
-            android:text="Lesson 2 Part 1"
+            android:text="@string/lesson_2_part_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonLesson2part1"
@@ -29,7 +29,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"/>
     <Button
-        android:text="Lesson 2 Part 2"
+        android:text="@string/lesson_2_part_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buttonLesson2part2"
@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp"/>
     <Button
-        android:text="Lesson 3 Navigation"
+        android:text="@string/lesson_3_navigation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buttonLesson3Navigation"
@@ -51,12 +51,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp"/>
     <Button
-            android:text="Lesson 4 Life Cycle"
+            android:text="@string/lesson_4_life_cycle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonLesson4LifeCycle"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/buttonLesson3Navigation"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"/>
+
+    <Button
+            android:text="Lesson 5 App ArchitectureUILayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonLesson5AppArchitectureUILayer"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLesson4LifeCycle"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent"
